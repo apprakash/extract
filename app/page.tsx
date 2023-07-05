@@ -33,7 +33,7 @@ export default function Home() {
   }, [files]);
 
   return (
-    <div className="flex flex-col items-center justify-center flex-grow">
+    <div className="flex flex-col items-center justify-center flex-grow p-10">
       <div
         {...getRootProps()}
         className="p-20 border-2 rounded-4 border-black border-dashed outline-none transition border-opacity-24 max-w-xl text-black text-center text-20"
@@ -42,6 +42,14 @@ export default function Home() {
         <p>Drag and drop some files here or click to select files</p>
         <em>(Only pdf files will be accepted)</em>
       </div>
+      <table className="mt-10 border-collapse">
+        <thead>
+          <tr>
+            <th className="border border-black p-2">File Name</th>
+            <th className="border border-black p-2">Size</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   );
 }
