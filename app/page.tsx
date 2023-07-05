@@ -11,8 +11,10 @@ export default function Home() {
   const [files, setFiles] = useState<ExtendedFile[]>([]);
   const [isLoad, setIsLoad] = useState(false);
 
-
   const { getRootProps, getInputProps } = useDropzone({
+    accept: {
+      "application/pdf": [],
+    },
     maxFiles: 1,
     onDrop: async (acceptedFiles: any[]) => {
       setFiles(
@@ -20,7 +22,7 @@ export default function Home() {
           Object.assign(file, { preview: URL.createObjectURL(file) })
         )
       );
-      console.log("File accepted")
+      console.log("File accepted");
     },
   });
 
